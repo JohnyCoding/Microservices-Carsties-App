@@ -19,6 +19,8 @@ export default function Listings() {
 			searchTerm: state.searchTerm,
 			orderBy: state.orderBy,
 			filterBy: state.filterBy,
+			seller: state.seller,
+			winner: state.winner,
 		}))
 	);
 	const setParams = useParamsStore((state) => state.setParams);
@@ -44,7 +46,7 @@ export default function Listings() {
 			) : (
 				<>
 					<div className="grid grid-cols-4 gap-6">
-						{data.results.map((auction) => (
+						{data.results?.map((auction) => (
 							<AuctionCard key={auction.id} auction={auction} />
 						))}
 					</div>
