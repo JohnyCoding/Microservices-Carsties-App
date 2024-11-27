@@ -10,6 +10,7 @@ This is a demo of a car auction website, built from different microservices made
 - .NET 8
 - Postresql
 - MongoDB
+- RabbitMQ
 - Docker
 - NextJs
 - TypeScript
