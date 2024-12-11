@@ -1,7 +1,7 @@
 "use client";
 import { useParamsStore } from "@/hooks/useParamsStore";
 import { usePathname, useRouter } from "next/navigation";
-import React, { useState } from "react";
+import React from "react";
 import { FaSearch } from "react-icons/fa";
 
 export default function Search() {
@@ -11,7 +11,7 @@ export default function Search() {
 	const searchValue = useParamsStore((state) => state.searchValue);
 	const setSearchValue = useParamsStore((state) => state.setSearchValue);
 
-	function onChange(event: any) {
+	function onChange(event: React.ChangeEvent<HTMLInputElement>) {
 		setSearchValue(event.target.value);
 	}
 
@@ -25,7 +25,7 @@ export default function Search() {
 	return (
 		<div className="flex w-[50%] items-center border-2 rounded-full py-2 shadow-sm">
 			<input
-				onKeyDown={(e: any) => {
+				onKeyDown={(e) => {
 					if (e.key === "Enter") search();
 				}}
 				value={searchValue}

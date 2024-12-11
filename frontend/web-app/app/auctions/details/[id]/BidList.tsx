@@ -10,6 +10,7 @@ import BidItem from "./BidItem";
 import { numberWithCommas } from "@/app/lib/numberWithComma";
 import EmptyFilter from "@/app/components/EmptyFilter";
 import BidForm from "./BidForm";
+/* eslint-disable  @typescript-eslint/no-explicit-any */
 
 type Props = {
 	user: User | null;

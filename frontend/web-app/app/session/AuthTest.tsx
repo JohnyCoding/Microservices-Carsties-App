@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { updateAuctionTest } from "../actions/auctionActions";
 import { Button } from "flowbite-react";
+/* eslint-disable  @typescript-eslint/no-explicit-any */
 
 export default function AuthTest() {
 	const [loading, setLoading] = useState(false);

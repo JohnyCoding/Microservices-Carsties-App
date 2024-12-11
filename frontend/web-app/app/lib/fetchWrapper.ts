@@ -1,6 +1,7 @@
 import { auth } from "@/auth";
+/* eslint-disable  @typescript-eslint/no-explicit-any */
 
-const baseUrl = "http://localhost:6001/";
+const baseUrl = process.env.API_URL;
 
 async function get(url: string) {
 	const requestOptions = {
@@ -13,7 +14,7 @@ async function get(url: string) {
 	return handleResponse(response);
 }
 
-async function post(url: string, body: {}) {
+async function post(url: string, body: unknown) {
 	const requestOptions = {
 		method: "POST",
 		headers: await getHeaders(),
@@ -25,7 +26,7 @@ async function post(url: string, body: {}) {
 	return handleResponse(response);
 }
 
-async function put(url: string, body: {}) {
+async function put(url: string, body: unknown) {
 	const requestOptions = {
 		method: "PUT",
 		headers: await getHeaders(),
@@ -61,11 +62,11 @@ async function getHeaders() {
 
 async function handleResponse(response: Response) {
 	const text = await response.text();
-	// const data = text && JSON.parse(text);
 	let data;
 	try {
 		data = JSON.parse(text);
 	} catch (error) {
+		console.log(error);
 		data = text;
 	}
 
