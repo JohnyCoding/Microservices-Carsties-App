@@ -1,6 +1,6 @@
 # Carsties - Auction Website Demo
 
-This is a demo of a car auction website, built from different microservices made with .NET 8, and a front-end with NextJs. The back-end is fully dockerized and can be run with:
+This is a demo of a car auction website, built from different microservices made with .NET 8, and a front-end with NextJs. The entier app is fully dockerized and can be run with:
 
 ```
   docker compose up
